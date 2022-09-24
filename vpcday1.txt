@@ -1,0 +1,37 @@
+09/24/2022 Saturday 
+
+VPC day1 
+
+1. VPC stands for --> Virtual Private Cloud 
+2. Why VPC --> For network isolation. Basically by using VPC we create Private Cloud in Public Cloud space. 
+3. First AWS region must be selected. For example. us-east-1, us-west-2, eu-central-1
+4. Best practice is to delete default VPC (Upon creation of aws account provided vpc)
+5. IP (internet protocol). 2 kinds of IPs. 1) ipv4 and 2) ipv6
+6. Reason for IPv6 because number of ipv4 is running out. 
+7. /16, /24, /28, /32 it means number of IPs vpc gets. 
+8. How do you decide which ip used for vpc? companies have own ip pool which is reserved corporate IPs. 
+8. giving wider cidr range to vpc is terrible idea because it raises huge security concern. 
+9. Only 1 internet gateway attached to only 1 vpc 
+10. Why Subnet/AZ (Availability Zone). AZs are Data Centers which is isolated from each other with decent distance. 
+11. Overlapping IPs not allowed for Subnets in the same VPC
+11. Benefits of AZ --> HA (High Availability), DR (Disaster Recovery), FT (Fault Tolerence) and Zero Down Time 
+12. By default Subnets are private. Becauase they don't have internet connectivity by default. 
+Scenario: BMW and Mercedes. Lets say BMW and Mercedes store their data in the same Public Cloud Space (AWS).
+Their infra becomes vulnarable, basically data exposed to each other. In order to achieve isloation VPC will be used. 
+13. NACL (Network Access Control List) --> Security 
+14. Differences between SG (Security Group) and NACL 
+    14.1 --> SG is stateful --> Once inbound rules defined you don't have to define outbound rules. Outbound
+    rules by default ALLOWED. Unlike SG NACL is stateless. Once Inbound rules defined Outbound rules 
+    must be explicitly defined. 
+    14.2 --> NACL works in Subnet level, SG works in EC2 (Virtual Machine) level 
+    14.3 --> NACL goes by rule number. Lower number has higher priority. 
+
+Demo:
+Do you know what is 3 tier solution in AWS VPC? 
+
+1. During Subnet assigning cidr ip OCTET used. Basically 10 IPs reserved for future use. 
+2. NAT Gateway --> gives private connectivity from public instances to private 
+3. NAT Gateway must sit in Public Subnet 
+4. Elastic IP --> static IP (no changed). 
+5. Do we need to pay for Elastic IP --> It depends. While using its free otherwise its not free. 
+6. Nat Gateway used in Private Route Table 
