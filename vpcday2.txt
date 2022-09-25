@@ -1,0 +1,43 @@
+09/25/2022 Sunday Funday
+
+============================================================================
+HOMEWORK
+Based on VPC diagrams create README.md files (for example READMEVPCsecure.md and etc.) and add 
+all the steps for each diagram. After completion push to github.
+Demo: Sep. 29
+============================================================================
+
+VPC day 2 
+
+1. After Building VPC with necesarry components, what is the next step? To test 
+2. First Step spin up/launch/provision VM (Virtual Machine) / EC2 (Elastic Cloud Compute)
+3. What is Bastion Host or Jump Box or Jump Start? Bastion Host used for private connectivity from public to 
+private 
+4. ICMP protocol --> This utility helps to monitor network host and other devices. 
+5. Private Instances (EC2/VM) can be reached with 2 ways: 1) First copy pem/key pair file to private Instance 
+(Its terrible idea!!! Don't ever do it even mention)
+6. Verify ssh to correct vm --> run "ip addr"  and under eth0 network interface grab the IP without /
+In EC2 console paste in search box. 
+7. Login/SSH into Instance --> ssh -i <pem file> ec2-user@<public-ip>
+8. chmod 400 ~/Downloads/<pem file> --> locks down the permissions 
+9. ssh-add -K ~/Downloads/<pem file> --> adds pem file to ssh identity 
+10. ssh -A ec2-user@<public-ip> --> Login to Instance 
+11. Once logged in to Bastion run --> ssh ec2-user@<private-ip>
+12. ping -c 3 google.com or any domain name to test internet connectivity 
+
+Interview question: NAT gateway is great but data still traverse through the internet. It could be an issue
+What alternatives are there? VPC Endpoint Interface/Gateway 
+
+VPC Monitoring: 
+
+1. How do you monitor your VPC --> VPC Flow logs 
+2. 2 Destination types --> S3 and Cloudwatch 
+3. Cloudwatch is a AWS monitoring service 
+
+Interview question: Inn case entire region goes down how can you achive Fault Tolerence? VPC peering/
+Blue Green Deployment
+
+Interview question: What shift left means to you? Taking Security more serious. 
+
+
+
