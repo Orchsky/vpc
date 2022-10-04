@@ -140,7 +140,7 @@
                         ]
 
                     }
-                 },
+                },
                  "routetablepublic": {
                     "Type": "AWS::EC2::Route",
                     "DependsOn": "AttachGatewayvpc1",
