@@ -90,7 +90,7 @@
             "vpc1SubnetPrivate2": {
                 "Type": "AWS::EC2::Subnet",
                 "Properties": {
-                    "CidrBlock": "10.0.3.0/24",
+                    "CidrBlock": "10.0.4.0/24",
                     "VpcId": {"Ref": "vpc1"},
                     "Tags": [
                         {
@@ -100,7 +100,7 @@
                     "MapPublicIpOnLaunch": false,
                     "AvailabilityZone": {
                         "Fn::Select": [
-                            "0",
+                            "1",
                             {
                                 "Fn::GetAZs": ""
                             }
@@ -119,6 +119,7 @@
                             "Value": "vpc-igw"
                         }
                     ]
+                }
                 },
                 "AttachGatewayvpc1" : {
                     "Type" : "AWS::EC2::VPCGatewayAttachment",
@@ -149,7 +150,15 @@
                         "GatewayId": {"Ref": "igwvpc1"}
                     }
                  }
+            },
+            "Outputs": {
+                "vpc1": {
+                    "Description": "Return output of vpc",
+                    "Value": {"Ref": "vpc1"},
+                    "Export": {
+                        "Name": "cft-vpc"
+                    }
+                }
             }
         }
-    }
 

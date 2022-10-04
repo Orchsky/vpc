@@ -10,3 +10,9 @@ Why we have to suffer with CloudFormation (JSON is ugly)? AWS console so easy/be
 
 If we have 20 VPCs? Building manually is a tidious process. 
 For DR (Disaster Recovery)
+
+
+10/04/2022 Tuesday 
+
+1. Functional programming --> First Class Citizens of coding 
+2. Cloud Formation template is ready. But there is a small bug/defect in the code. This fix called HotFix. 
