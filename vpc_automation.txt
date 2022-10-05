@@ -16,3 +16,11 @@ For DR (Disaster Recovery)
 
 1. Functional programming --> First Class Citizens of coding 
 2. Cloud Formation template is ready. But there is a small bug/defect in the code. This fix called HotFix. 
+3. Hotfix fixes usually takes only couple of hours or maybe couple of days 
+4. Fix which takes at least 2 weeks (1 Sprint) called BigFix. 
+5. aws cloudformation validate-template --template-body file://vpc_iac.json 
+6. aws cloudformation deploy --template-file vpc_iac.json --stack-name vpc-stack --parameter-overrides KeyName=bastion
+7. aws cloudformation delete-stack --stack-name vpc-stack
+
+CI/CD and benefits 
+Lets find out how Continous Integration (GitHub) and Continous Deployment work together and benefits. 
