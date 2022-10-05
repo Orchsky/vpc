@@ -21,6 +21,19 @@
                 ]
             }
             },
+            "vpc2": {
+                "Type": "AWS::EC2::VPC",
+                "Properties": {
+                    "CidrBlock": "192.168.0.0/16",
+                    "EnableDnsHostnames": true,
+                    "EnableDnsSupport": true,
+                    "InstanceTenancy" : "default",
+                    "Tags": [
+                        {"Key": "Name", "Value": "orchsky"},
+                        {"Key": "Environment", "Value": "dev"}
+                    ]
+                }
+                },
             "vpc1SubnetPublic1": {
                 "Type": "AWS::EC2::Subnet",
                 "Properties": {
