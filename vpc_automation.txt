@@ -26,3 +26,5 @@ CI/CD and benefits
 Lets find out how Continous Integration (GitHub) and Continous Deployment work together and benefits. 
 1. CI/CD --> glue in the project 
 2. It helps to identify the problems as early as possible 
+
+Interview question: Can secrets/api keys stored in Version Control/Remote Repo (Github)? Noooooooooooo
