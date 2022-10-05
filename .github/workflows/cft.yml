@@ -34,6 +34,7 @@ jobs:
 
     - name: Start the command 
       run: sudo ./aws/install
+      continue-on-error: true
 
     - name: Deploy CFT to aws in us-east-1
       run: aws cloudformation deploy --template-file vpc_iac.json --stack-name vpc-stack --parameter-overrides KeyName=bastion
